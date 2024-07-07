@@ -1,0 +1,130 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.header_container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  background-color: #f0f6ff;
+  padding: 8px 250px;
+}
+
+.header span {
+  width: 30%;
+  height: 68px;
+  text-decoration: none;
+  display: flex;
+  margin-right: 50px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header p {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 15px 20px;
+  font-size: 30px;
+  color: white;
+  background-color: #057aff;
+  border-radius: var(--rounded-btn, 0.5rem);
+}
+
+.header ul {
+  display: flex;
+  text-align: left;
+  list-style: none;
+  text-align: left;
+}
+
+.header ul li {
+  color: grey;
+  font-weight: normal;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: all 0.5s;
+}
+
+.header ul li:hover {
+  background-color: rgb(234, 234, 235);
+  border-radius: 8px;
+}
+
+.wrapper_container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  width: 1200px;
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.card {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0px 3px 10px 8px rgba(34, 60, 80, 0.2);
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.card img {
+  width: 80%;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+.loader_container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.loader {
+  width: 1200px;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 150px;
+}
+
+.loader img {
+  width: 40%;
+  border-radius: 50px;
+}
+
+.loader h5 {
+  font-size: 40px;
+  color: brown;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}

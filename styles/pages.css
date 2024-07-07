@@ -1,0 +1,145 @@
+* {
+  margin: 0px;
+  padding-left: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.header_container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  background-color: #f0f6ff;
+  padding: 8px 250px;
+  margin-bottom: 100px;
+}
+
+.header span {
+  width: 30%;
+  height: 68px;
+  text-decoration: none;
+  display: flex;
+  margin-right: 50px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header p {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 15px 20px;
+  font-size: 30px;
+  color: white;
+  background-color: #057aff;
+  border-radius: var(--rounded-btn, 0.5rem);
+}
+
+.header ul {
+  display: flex;
+  text-align: left;
+  list-style: none;
+  text-align: left;
+}
+
+.header ul li {
+  color: grey;
+  font-weight: normal;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: all 0.5s;
+}
+
+.header ul li:hover {
+  background-color: rgb(234, 234, 235);
+  border-radius: 8px;
+}
+
+.pages_wrapper_container {
+  max-width: 1256px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.pages_wrapper {
+  display: flex;
+  gap: 60px;
+  padding: 0px 80px;
+}
+
+.pages_wrapper img {
+  border-radius: 12px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info h1 {
+  font-size: 34px;
+  text-transform: capitalize;
+  font-weight: 700;
+  color: rgb(57 78 106);
+}
+
+.info h5 {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+  color: rgb(195, 196, 198);
+}
+
+.info h6 {
+  font-size: 20px;
+  color: rgb(106, 105, 105);
+  font-weight: normal;
+}
+
+.info p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+  color: #a2a3a4;
+  font-weight: normal;
+}
+
+.info span {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.info span select {
+  width: 300px;
+  padding: 15px;
+  padding-right: 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  border-color: mediumblue;
+}
+
+.info span button {
+  width: 150px;
+  padding: 12px 0px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: rgb(70 58 161);
+}
