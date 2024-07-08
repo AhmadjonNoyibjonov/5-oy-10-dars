@@ -44,6 +44,7 @@ body {
   color: white;
   background-color: #057aff;
   border-radius: var(--rounded-btn, 0.5rem);
+  cursor: pointer;
 }
 
 .header ul {
@@ -99,6 +100,16 @@ body {
   width: 80%;
   margin-bottom: 20px;
   border-radius: 12px;
+}
+
+.card h3 {
+  color: #394e6a;
+  text-transform: capitalize;
+}
+
+.card p {
+  font-weight: normal;
+  color: #463aad;
 }
 
 .loader_container {

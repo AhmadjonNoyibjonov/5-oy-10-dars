@@ -45,6 +45,7 @@ body {
   color: white;
   background-color: #057aff;
   border-radius: var(--rounded-btn, 0.5rem);
+  cursor: pointer;
 }
 
 .header ul {

@@ -1,5 +1,11 @@
 import { getUrl } from "./function.js";
 
+const cart = document.querySelector("#cart");
+
+cart.addEventListener('click',function() {
+  window.location.assign('http://127.0.0.1:5500/Pages/cart.html')
+})
+
 const wrapper = document.querySelector(".common");
 function createPages(product) {
   return `<div class="pages_wrapper pages_wrapper_container">
@@ -57,14 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
         wrapper.innerHTML = "Bunday mahsulot topilmadi.";
       }
       const select = document.querySelector(".info span select");
-      console.log(select);
       const button = document.querySelector(".info span button");
       button &&
         button.addEventListener("click", function (event) {
           event.preventDefault();
           let product = {
             id: data.data.id,
-            time: DataTransfer.now(),
+            time: Date.now(),
             count: select.value * 1,
             attribute: data.data.attributes,
           };
@@ -83,12 +88,10 @@ document.addEventListener("DOMContentLoaded", function () {
             products.push(product);
           }
           localStorage.setItem("products", JSON.stringify(products));
+          window.location.assign(
+            `http://127.0.0.1:5500/Pages/cart.html?id=${id}`
+          );
         });
-        button.addEventListener('click',function() {
-        
-            window.location.assign(`http://127.0.0.1:5500/Pages/cart.html?id=${id}`);
-
-        })
     })
     .catch((error) => {
       wrapper.innerHTML = "Bunday mahsulot topilmadi.";
