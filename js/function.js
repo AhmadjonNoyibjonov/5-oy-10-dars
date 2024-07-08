@@ -8,4 +8,4 @@ async function getUrl(url) {
   }
 }
 
-export {getUrl};
+export { getUrl };

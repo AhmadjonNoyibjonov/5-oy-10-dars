@@ -1,7 +1,6 @@
-import { getData } from "./function.js";
+import { getUrl } from "./function.js";
 
 const wrapper = document.querySelector(".common");
-
 function createPages(product) {
   return `<div class="pages_wrapper pages_wrapper_container">
     <img width="550" height="400"
@@ -11,7 +10,7 @@ function createPages(product) {
     <div class="info">
         <h1>${product.attributes.title}</h1>
         <h5>${product.attributes.company}</h5>
-        <h6>$${product.attributes.price}</h6>
+        <h6>$${product.attributes.price / 100}</h6>
         <p>${product.attributes.description}</p>
 
         <span>
@@ -34,6 +33,14 @@ function createPages(product) {
 </div>`;
 }
 
+function getDataStroge() {
+  let data = [];
+  if (localStorage.getItem("products")) {
+    data = JSON.parse(localStorage.getItem("products"));
+  }
+  return data;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   let url = window.location.href;
   let id = url.split("id=")[1];
@@ -41,11 +48,50 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.assign("http://127.0.0.1:5500/");
     return;
   }
-  getData(`https://strapi-store-server.onrender.com/api/products${id}`)
-    .them((data) => {
+  getUrl(`https://strapi-store-server.onrender.com/api/products/${id}`)
+    .then((data) => {
+      if (data.data.id) {
+        const card = createPages(data.data);
+        wrapper.innerHTML = card;
+      } else {
+        wrapper.innerHTML = "Bunday mahsulot topilmadi.";
+      }
+      const select = document.querySelector(".info span select");
+      console.log(select);
+      const button = document.querySelector(".info span button");
+      button &&
+        button.addEventListener("click", function (event) {
+          event.preventDefault();
+          let product = {
+            id: data.data.id,
+            time: DataTransfer.now(),
+            count: select.value * 1,
+            attribute: data.data.attributes,
+          };
+          let products = getDataStroge();
+          let isExist = products.find((element) => {
+            return element.id == product.id;
+          });
+          if (isExist && isExist.id) {
+            products = products.map((element) => {
+              if (element.id === product.id) {
+                element.count += product.count;
+              }
+              return element;
+            });
+          } else {
+            products.push(product);
+          }
+          localStorage.setItem("products", JSON.stringify(products));
+        });
+        button.addEventListener('click',function() {
         
+            window.location.assign(`http://127.0.0.1:5500/Pages/cart.html?id=${id}`);
+
+        })
     })
     .catch((error) => {
+      wrapper.innerHTML = "Bunday mahsulot topilmadi.";
       return error;
     });
 });
