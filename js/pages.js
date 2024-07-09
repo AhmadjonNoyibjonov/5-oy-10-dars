@@ -2,9 +2,14 @@ import { getUrl } from "./function.js";
 
 const cart = document.querySelector("#cart");
 
-cart.addEventListener('click',function() {
-  window.location.assign('http://127.0.0.1:5500/Pages/cart.html')
-})
+cart.addEventListener("click", function () {
+  window.location.assign("http://127.0.0.1:5500/Pages/cart.html");
+});
+
+const product = document.querySelector("#product");
+product.addEventListener("click", function () {
+  window.location.assign("http://127.0.0.1:5500/");
+});
 
 const wrapper = document.querySelector(".common");
 function createPages(product) {

@@ -3,6 +3,12 @@ import { getUrl } from "./function.js";
 const wrapper = document.querySelector(".wrapper");
 const loader = document.querySelector(".loader");
 
+const cart = document.querySelector("#cart");
+
+cart.addEventListener('click',function() {
+  window.location.assign('http://127.0.0.1:5500/Pages/cart.html')
+})
+
 function CreateCard(product) {
   return `<div class="card" data-id="${product.id}">
     <img width="400" height="200"

@@ -1,5 +1,10 @@
 const wrap = document.querySelector("#wrap");
 
+const product = document.querySelector("#product");
+ product.addEventListener("click", function () {
+  window.location.assign("http://127.0.0.1:5500/");
+});
+
 function getCart(product) {
   return `<div class="wrapper wrapper_container">
     <img width="150" height="160"
@@ -47,6 +52,7 @@ function save(products) {
     count: products.count,
     attribute: products.attribute,
   };
+
 
   let data = [];
   if (localStorage.getItem("products")) {
